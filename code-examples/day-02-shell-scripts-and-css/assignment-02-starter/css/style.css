@@ -1,0 +1,32 @@
+*{
+   box-sizing: border-box;
+}
+
+body{
+}
+
+ul{
+   padding: 0;
+}
+.mockup-1{
+   background: palegoldenrod;
+   padding: 40px;
+   font-family: Georgia;
+   width: 800px;
+}
+
+.mockup-1 h1{
+   font-size: 48px;
+}
+
+.mockup-1 p{
+   font-size: 28px;
+}
+
+.mockup-2 li {
+   border: 1px rgba(200,200,200,1) solid;
+   color: darkgreen;
+}
+.mockup-2 .active {
+   background: chartreuse;
+}

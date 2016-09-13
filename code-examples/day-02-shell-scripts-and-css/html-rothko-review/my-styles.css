@@ -1,3 +1,7 @@
+*{
+   box-sizing: border-box;
+}
+
 body{
    font-family: 'Helevetica Neue','Helvetica', sans-serif;
 }
@@ -17,8 +21,10 @@ hr{
    width: 450px;
    margin-left: auto;
    margin-right: auto;
+   margin-bottom: 80px;
    border: 4px black solid;
    padding: 40px;
+
 }
 
 .some-section{
@@ -26,13 +32,16 @@ hr{
    margin-bottom: 12px;
 }
 
+
+
 .header h1 {
    font-size: 28px;
    margin-bottom: 4px;
 }
 
 .header h2 {
-   color: red;
+   /*#[red-red][green-green][blue-blue]*/
+   color: rgba(135, 75, 74, 1);
    font-size: 24px;
    font-weight: 200;
    margin-top: 0px;
