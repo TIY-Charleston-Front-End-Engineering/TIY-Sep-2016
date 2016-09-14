@@ -8,7 +8,8 @@ body {
   font-family: 'Libre Franklin', 'Helvetica Neue', 'Helvetica', sans-serif; }
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+}
 
 /*
 ** Sane Defaults
@@ -467,28 +468,28 @@ p {
     font-size: 3rem;
     /* 3x body copy size = 48px */
     line-height: 1.05;
-    /* keep to a multiple of the 20px line height 
+    /* keep to a multiple of the 20px line height
     and something more appropriate for display headings */ }
 
   h2 {
     font-size: 2.25rem;
     /* 3x body copy size = 48px */
     line-height: 1.25;
-    /* keep to a multiple of the 20px line height 
+    /* keep to a multiple of the 20px line height
     and something more appropriate for display headings */ }
 
   h3 {
     font-size: 1.75rem;
     /* 3x body copy size = 48px */
     line-height: 1.05;
-    /* keep to a multiple of the 20px line height 
+    /* keep to a multiple of the 20px line height
     and something more appropriate for display headings */ }
 
   h4 {
     font-size: 1.125rem;
     /* 3x body copy size = 48px */
     line-height: 1.222222;
-    /* keep to a multiple of the 20px line height 
+    /* keep to a multiple of the 20px line height
     and something more appropriate for display headings */ } }
 mark {
   background: #f7ca18;
