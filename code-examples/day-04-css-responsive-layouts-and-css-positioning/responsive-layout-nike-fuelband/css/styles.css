@@ -56,10 +56,49 @@ body{
    width: 33.3333333%;
 }
 
+.main-product .description{
+   width: 33.33333%;
+}
+.main-product .product-img{
+   width: 66.66667%;
+}
 
 .footer li{
    color: #fff;
    padding: 30px;
    width: 50%;
    background: #333;
+}
+
+.fixed-flash-warning-notice{
+   position: fixed;
+   background: rgba(241, 196, 15,1.0);
+   bottom: 10px;
+   right: 30px;
+   padding: 20px;
+   text-align: center;
+}
+
+.fixed-flash-warning-notice h3{
+   margin-top: 0;
+}
+
+.fixed-flash-warning-notice button{
+   display: block;
+   margin: 10px auto;
+   background: rgba(230, 126, 34,1.0);
+   border: #fff 3px solid;
+   color: #fff;
+   padding: 15px;
+}
+
+
+.fixed-flash-warning-notice i{
+   color: rgba(192, 57, 43,1.0);
+
+}
+.fixed-flash-warning-notice button:hover{
+
+   background: rgba(192, 57, 43,1.0);
+
 }
