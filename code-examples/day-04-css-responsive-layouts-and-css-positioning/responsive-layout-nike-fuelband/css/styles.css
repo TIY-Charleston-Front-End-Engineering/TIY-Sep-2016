@@ -1,0 +1,65 @@
+/*CSS SANE DEFAULTS*/
+* {
+   box-sizing: border-box;
+}
+
+
+img {
+   display: block;
+   width: 100%;
+}
+
+ul {
+   padding: 0;
+}
+
+body{
+   margin: 0;
+}
+
+/*---------*/
+
+/* 'General' Classes  */
+body{
+   background: #ddd;
+   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
+
+.column-container{
+   font-size: 0;
+}
+
+.column-container > * {
+   display: inline-block;;
+   font-size: medium;
+   vertical-align: top;
+}
+/* --------------- */
+
+/* --- Specific Styles----- */
+
+#app-container{
+   max-width: 960px;
+   margin-left: auto;
+   margin-right: auto;
+   background-color: #fff;
+   padding: 20px;
+}
+
+.navbar h1{
+   margin: 0;
+}
+
+.display-images div{
+   padding: 15px;
+   width: 33.3333333%;
+}
+
+
+.footer li{
+   color: #fff;
+   padding: 30px;
+   width: 50%;
+   background: #333;
+}
