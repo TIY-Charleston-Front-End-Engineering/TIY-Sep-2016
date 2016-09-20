@@ -1,0 +1,103 @@
+*{ box-sizing: border-box }
+
+body{
+   margin: 0;
+   font-family: "GillSans", sans-serif;
+}
+
+img {
+   width: 100%;
+   display: block;
+}
+
+.column-container{
+   font-size: 0;
+}
+
+.column-container > .grid-item{
+   font-size: medium;
+   display: inline-block;
+   vertical-align: top;
+}
+
+
+
+#app-container{
+   max-width: 960px;
+   margin: 0 auto;
+
+
+
+   .room-card {
+      margin: 20px 0;
+      max-width: 500px;
+
+      // (2B) -- `position: relative` anchor
+      position: relative;
+
+      h3{ font-weight: 200; margin-top: 0;}
+
+
+      .info-container{
+         position: relative;
+         padding-top: 8px;
+         padding-left: 6px;
+         .text-column{width: 80%;}
+
+         .icon-column{
+            width:20%;
+            padding: 3px;
+            img.user-icon {
+               // (1) simple `position: relative`
+               position: relative;
+               top: -34px;
+
+               border-radius: 50%;
+
+            }
+         }
+      }
+
+      .like-btn{
+
+         // (2B) -- Position Absolute inside `relative: position` element
+         position: absolute;
+         top: 20px;
+         right: 20px;
+
+         opacity: .8;
+         color: tomato;
+         font-size: 30px;
+      }
+
+   }
+
+
+}
+
+@media screen and (min-width: 768px){
+   #app-container{
+      max-width: 960px;
+      margin: 0 auto;
+
+
+
+      .room-card {
+         border: solid #333 2px;
+         padding: 10px;
+         .like-btn{
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            font-size: 300px;
+
+            transform: translate(-50%, -50%);
+         }
+
+      }
+
+
+   }
+}

@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box; }
+
+img {
+  width: 100%;
+  display: block; }
+
+.left-column {
+  background: palegoldenrod; }
+  .left-column h1 {
+    color: tomato; }
+  .left-column h2 {
+    color: tomato; }
+  .left-column .img-border-container {
+    padding: 50px;
+    border: solid 4px tomato; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Geneva', sans-serif; }
+
+img {
+  width: 100%;
+  display: block; }
+
+#app-container {
+  background: url("../images/example-3-bg.jpeg") center center no-repeat;
+  background-size: cover;
+  height: 100vh; }
+  #app-container .modal-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(100, 100, 100, 0.7); }
+    #app-container .modal-overlay .modal-window {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding-top: 20px;
+      background: #fff;
+      border: green 3px solid; }
+      #app-container .modal-overlay .modal-window h2, #app-container .modal-overlay .modal-window p, #app-container .modal-overlay .modal-window button {
+        padding: 0 20px;
+        text-align: center;
+        display: block;
+        width: 100%; }
+      #app-container .modal-overlay .modal-window h2
+      p {
+        font-size: 21px; }
+      #app-container .modal-overlay .modal-window button {
+        margin-top: 16px;
+        background: green;
+        color: #fff;
+        border: 0;
+        padding: 5px;
+        font-size: 18px;
+        text-transform: uppercase; }
+
+/*# sourceMappingURL=styles.css.map */
