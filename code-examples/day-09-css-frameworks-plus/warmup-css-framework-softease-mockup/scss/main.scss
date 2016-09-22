@@ -1,0 +1,70 @@
+
+@import "./imports/normalize";
+@import "./imports/helpers";
+
+
+@mixin media-query($screen-size){
+   @media screen and (min-width: $screen-size){
+      @content;
+   }
+}
+
+*{
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Open Sans', 'Helvetica', sans-serif;
+}
+
+.header-font{
+   font-family: 'Poppins', 'Helvetica' sans-serif;
+   font-weight: 700;
+}
+
+#app-container{
+   // Go for it!
+
+   .my-hero-unit{
+     color: #fff;
+     background: url('../images/softease-bg-img.jpg') center center no-repeat;
+     background-size: cover;
+     position: relative;
+
+     .overlay-div{
+       position: absolute;
+       height: 100%; width: 100%;
+       top: 0; left: 0;
+       background: rgba(74, 163, 223, .9);
+       z-index: 1;
+     }
+
+     .hero-content{
+       position: relative;
+       z-index: 2;
+     }
+
+     .pills-bro{
+       border-radius: 24px;
+       color: dodgerblue;
+     }
+   }
+
+   .our-features {
+     border: 1px #aaa solid;
+
+     .some-feature{
+       padding: 10px;
+     }
+
+     i {
+       color: dodgerblue;
+       font-size: 40px;
+     }
+
+
+   }
+
+
+
+}

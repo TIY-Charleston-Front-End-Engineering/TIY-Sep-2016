@@ -1,0 +1,166 @@
+@import "./imports/normalize";
+@import "./imports/helpers";
+
+$tablet-screen: 768px;
+$theme-green: #049372;
+$theme-orange: lighten(rgba(211, 84, 0,1.0), 30%);
+
+@mixin media-query($screen-size){
+   @media screen and (min-width: $screen-size){
+      @content;
+   }
+}
+
+*{
+   box-sizing: border-box;
+}
+
+body {
+font-family: 'Titillium Web', sans-serif;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.header-font{
+  font-family: 'PT Mono', monospace;
+  color: #049372;
+}
+
+#app-container{
+
+  // locally scoped variable
+  $nav-icon-width: 70px;
+  padding-top: $nav-icon-width;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  // CSS TOGGLE MENU
+  nav {
+    position: fixed;
+    top: 0; left: 0;
+    max-height: 10000px;
+    width: 100%;
+    // SCSS helper mixin
+    background: transparentize(#676767, .1);
+    color: #fff;
+    z-index: 300;
+
+    input.toggler{
+      position: absolute;
+      top: 0; left: 0;
+      width: $nav-icon-width; height: $nav-icon-width;
+      margin: 0;
+      opacity: .25;
+      z-index: 3;
+
+      // `~` allows us to target SIBLING HTML elements
+      &:checked ~ .hamburger-icon{
+        background-color: #3498db;
+      }
+
+      // `~` allows us to target SIBLING HTML elements
+      //   here
+      &:checked ~ ul{
+        max-height: 1000px;
+      }
+
+      @include media-query($tablet-screen){
+        display: none;
+      }
+
+    }
+
+    .hamburger-icon{
+      position: absolute;
+      top: 0; left: 0;
+      width: $nav-icon-width;
+      height: $nav-icon-width;
+      z-index: 2;
+
+      text-align: center;
+
+      // `lighten` is another scss-included miin
+      background: lighten(rgba(211, 84, 0,1.0), 30%);
+
+      i {
+        // line-height will vertically center text for ONE line of text
+        line-height: $nav-icon-width;
+      }
+
+      @include media-query($tablet-screen){
+        display: none;
+      }
+    }
+
+    ul{
+      max-height: 0px;
+      margin: 0;
+      padding-left: 0;
+      padding-top: $nav-icon-width;
+      list-style-type: none;
+      overflow: hidden;
+      transition: .2s all;
+
+      @include media-query($tablet-screen){
+        padding-top: initial;
+        text-align: left;
+        max-height: initial;
+      }
+
+      li {
+        padding: 10px;
+
+        // targets the <li class="active"></li> element
+        &.selected{
+          background: $theme-orange;
+        }
+
+        @include media-query($tablet-screen){
+          display: inline-block;;
+        }
+
+      }
+
+    }
+
+  }
+
+
+  .logo-main{
+    padding-top: 20px;
+
+    img {
+      width: 75%;
+      margin: 0 auto;
+    }
+  }
+
+
+  // Mobile styles for "Securing the Future" img
+  .logo-strapline {
+    padding-top: 40px;
+
+    // Tablet-Plus styles for "Securing the future img" using media-query mixin
+    @include media-query($tablet-screen){
+      padding-top: 100px;
+    }
+
+
+    img{
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+
+
+  .profile-pics{
+      padding: 20px 0;
+
+      h4{
+        color: $theme-green;
+      }
+  }
+}
