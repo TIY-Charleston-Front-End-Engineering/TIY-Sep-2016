@@ -26,11 +26,52 @@ hotTagItem.className = 'so-hot'
 
 
  // + Change Style of an element with «element».style.«property»
-var choresListContainer = document.querySelector('.list-of-chores')
-choresListContainer.style.border = "3px solid slateblue"
 
- // + Add to width of line with getComputedStyle
-var someLine = document.querySelector('.some-line')
-var lineComputed = window.getComputedStyle( someLine)
-var integerVal =  parseInt(lineComputed.width)
-someLine.style.width = integerVal * 3 + "px"
+var listOfChores = document.querySelector('.list-of-chores');
+listOfChores.style.border = "10px cadetblue solid";
+listOfChores.style.padding = "50px";
+listOfChores.style.listStyleType = "square";
+
+
+
+ // + Read then write width of line with getComputedStyle
+var someLineEl = document.querySelector('.some-line')
+//window.someLineEl
+
+console.log(someLineEl.style.width)
+var lineElStyles = window.getComputedStyle(someLineEl)
+// console.log(lineElStyles)
+console.log(lineElStyles.width.slice(0, -2))
+var widthNumString = lineElStyles.width.slice(0, -2)
+
+var widthNum = parseInt(widthNumString)
+console.log(widthNum * 2)
+
+someLineEl.style.width = widthNum * 2 + "px";
+
+
+
+
+
+// + Selecting multiple elements w/ document.querySelectorAll(«css-selector»)
+//   and basic iteration
+
+var choreLiEls = document.querySelectorAll('.list-of-chores li')
+
+console.log(choreLiEls)
+
+for (var i = 0 ; i < choreLiEls.length ; i+=1){
+   var singleChoreLiElement = choreLiEls[i]
+   console.log( singleChoreLiElement.textContent )
+}
+
+
+
+
+
+
+
+
+
+
+//

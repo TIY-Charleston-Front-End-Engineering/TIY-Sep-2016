@@ -28,8 +28,12 @@ body {
    background: lightgreen;
 }
 
+ul.list-of-chores{
+   list-style-type: none;
+}
+
 .some-line{
    width: 200px;
    height: 10px;
-   background: cadetblue;
+   background: navy;
 }
