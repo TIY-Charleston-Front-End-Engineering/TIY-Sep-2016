@@ -1,0 +1,35 @@
+*{box-sizing: border-box;}
+body {
+   font-family: 'GillSans';
+   font-weight: 400;
+   font-size: 1.5rem;
+}
+
+
+.tagged-as span {
+   display: inline-block;
+   padding: 20px;
+   margin: 10px;
+   background: purple;
+   color: #fff;
+   line-height: 1.5rem;
+}
+
+.tagged-as .so-hot {
+   background: firebrick;
+   color: #fff;
+}
+
+.not-done{
+   color: #767676
+}
+
+.done{
+   background: lightgreen;
+}
+
+.some-line{
+   width: 200px;
+   height: 10px;
+   background: cadetblue;
+}
