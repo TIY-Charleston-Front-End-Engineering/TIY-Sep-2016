@@ -1,6 +1,6 @@
 
 
-// A
+// A - anatomy of event listener
 //---
 //(1) select dom element that receives event (the listening element)
 var alertBtnEl = document.querySelector('.pop-alert')
@@ -37,6 +37,7 @@ var h2El = document.querySelector('.yo-h2')
 
 var modifyClickedElement = function(evt){
    console.log(evt.target)
+   evt.target.innerHTML = "WOAHHHH CLICKED!"
    evt.target.classList.add('urgent')
 }
 
