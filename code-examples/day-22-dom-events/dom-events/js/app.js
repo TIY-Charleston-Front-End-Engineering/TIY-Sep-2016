@@ -40,5 +40,5 @@ var modifyClickedElement = function(evt){
    evt.target.classList.add('urgent')
 }
 
-doItBtn.addEventListener('click', modifyClickedElement)
+doItBtn.addEventListener('mouseover', modifyClickedElement)
 h2El.addEventListener('click', modifyClickedElement)
