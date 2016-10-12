@@ -1,0 +1,36 @@
+*{
+   box-sizing: border-box;
+}
+
+body{
+   margin: 0;
+}
+
+img{
+   width: 100%;
+   display: block;
+   margin: 0 auto;
+   max-width: 300px;
+}
+
+.splash{
+
+   background: #EFEFBB; /* fallback for old browsers */
+   background: -webkit-linear-gradient(to left, #EFEFBB , #D4D3DD); /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to left, #EFEFBB , #D4D3DD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+              background-size: cover;
+   min-height: 100vh;
+}
+
+h1 {
+   background: rgba(242, 120, 75, .85);
+   text-align: center;
+   padding: 40px;
+}
+
+.content{
+   background: rgba(255,255,255,.5);
+   max-width: 800px;
+   margin: 0 auto;
+
+}

@@ -1,0 +1,24 @@
+*{
+   box-sizing: border-box;
+}
+
+table{
+   background: #BE90D4;
+   font-size: 1.88rem;
+}
+
+thead{
+   background: #333;
+   color: #fff;
+}
+
+ul{
+   padding: 20px;
+   font-size: 2.75rem;
+
+   background: #86E2D5;
+}
+
+button{
+   background: #F4D03F;
+}
