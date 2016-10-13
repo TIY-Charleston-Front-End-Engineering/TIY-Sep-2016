@@ -1,0 +1,24 @@
+@import "./imports/_normalize.scss";
+
+*{ box-sizing: border-box }
+img {
+   width: 100%;
+   display: block;
+}
+
+#app-container{
+   max-width: 960px;
+   margin: 0 auto;
+}
+
+li {
+   font-size: 21px;
+}
+
+.movies .thumbnail{
+   border: #333 solid 2px;
+}
+
+.movies .thumbnail img{
+   height: 595px;
+}
