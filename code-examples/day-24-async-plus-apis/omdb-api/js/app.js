@@ -31,6 +31,6 @@ var putDataOnPage = function(returnedData){
 }
 
 // Promise                                    Promise-Handler
-$.getJSON('https://www.omdbapi.com/?s=wolf&page=2').then(putDataOnPage)
+$.getJSON('http://www.omdbapi.com/  s=wolf   page=2').then(putDataOnPage)
 
 console.log("WHO GOES FIRST?????")
