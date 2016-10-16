@@ -48,6 +48,12 @@ var showHomePage = function(){
 var showUserShowsPage = function(usr){
    var userObj = userList[usr]
 
+   //CREATE CONTAINER FOR DATA AND PUT ON PAGE
+   var bigHTMLStr = '<h2>All <span class="bg-primary"> '+ userObj.username + '\'s </span> Shows </h2>'
+       bigHTMLStr = '<div class="row shows-list"> </div>'
+
+       appContainer.innerHTML = bigHTMLStr
+
    // FETCH DATA
    var firstShowId = userObj.showIds[0]
    console.log('.showId[0]', firstShowId )
@@ -58,16 +64,17 @@ var showUserShowsPage = function(usr){
    //    console.log(dataResponse)
    // })
 
+
+
+   // (3) fetch *all*  the data for each showId 
    forEach(userObj.showIds, function(elementIdNum){
       // console.log(elementIdNum)
-      var bigHTMLStr = '<h2>All <span class="bg-primary"> '+ userObj.username + '\'s </span> Shows </h2>'
-          bigHTMLStr = '<div class="row shows-list"> </div>'
-
-      appContainer.innerHTML = bigHTMLStr
 
       $.getJSON("http://api.tvmaze.com/shows/" + elementIdNum ).then(function(dataResponse){
          console.log(dataResponse)
 
+         // RENDER DATA TO PAGE
+         // console.log(userList[selectedUser])
          var showsListContainerEl = document.querySelector('.shows-list')
 
          var showStr = '<div class="col-sm-3">'
@@ -82,8 +89,6 @@ var showUserShowsPage = function(usr){
    })
 
 
-   // RENDER TO PAGE
-   // console.log(userList[selectedUser])
 
 
 
