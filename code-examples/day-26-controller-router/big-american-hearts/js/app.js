@@ -84,3 +84,7 @@ var controllerRouter = function(){
 // ================= Controller Execution =====================
 window.addEventListener('hashchange', controllerRouter )
 controllerRouter()
+
+
+
+$.getJSON("https://api.github.com/users/t3patterson?")
