@@ -2,8 +2,6 @@
 //  BASIC ROUTING
 // ================
 
-console.log('wired up!')
-
 // FUNCTIONS
 // --------------------
 
@@ -15,21 +13,25 @@ var forEach = function(arr, cb){
 
 // ROUTER
 // (1-R) Create router that checks for initial state and changes in the hash
-var router = function(){
+var routerController = function(){
    var selectedUser = window.location.hash.slice(1)
+
+   console.log(selectedUser)
 
    if(selectedUser.length === 0){
       showHomePage()
       return
    }
 
-   console.log( selectedUser )
+   // console.log( selectedUser )
    showUserShowsPage(selectedUser)
 }
+
 
 var showHomePage = function(){
    var bigStr = '<div class="row users-container">'
        bigStr += "<h1>Who's watching?</h1>"
+
        for(var propp in userList ){
 
           console.log()
@@ -66,7 +68,7 @@ var showUserShowsPage = function(usr){
 
 
 
-   // (3) fetch *all*  the data for each showId 
+   // (3) fetch *all*  the data for each showId
    forEach(userObj.showIds, function(elementIdNum){
       // console.log(elementIdNum)
 
@@ -109,11 +111,9 @@ var userList = {
 var appContainer = document.querySelector('#app-container')
 
 
-
-
 // EXECUTION CODE
 // --------------------
 
 // (2-R) Execute Router on hash change AND at initialization
-window.addEventListener('hashchange', router )
-router()
+window.addEventListener('hashchange', routerController )
+routerController()
