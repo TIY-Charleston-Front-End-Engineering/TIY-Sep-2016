@@ -1,9 +1,5 @@
 console.log('wired up!')
 
-var congressPersonsEl = document.querySelector('.congress-persons')
-var loveCountEl = document.querySelector('.love-count')
-
-
 var fetchAndRenderHeartsData = function(stateInput){
    $.getJSON("http://capitolwords.org/api/1/dates.json?phrase=love&percentages=true&granularity=year&apikey=7ba96d266cc84b168fab4d878d9aa141&state="+stateInput)
       .then( function(returnData){
@@ -80,11 +76,29 @@ var controllerRouter = function(){
 
 }
 
+var handleSearchClick = function(evt){
+   console.log(evt)
+   window.location.hash = stateInputEl.value.toUpperCase()
+
+}
+
+var congressPersonsEl = document.querySelector('.congress-persons')
+var loveCountEl = document.querySelector('.love-count')
+
+var searchBtnEl = document.querySelector('.search-btn')
+var stateInputEl = document.querySelector('.state-input')
 
 // ================= Controller Execution =====================
+stateInputEl.addEventListener('keydown', function(evt){ if(evt.keyCode === 13) window.location.hash = stateInputEl.value.toUpperCase() })
+searchBtnEl.addEventListener('click', handleSearchClick )
 window.addEventListener('hashchange', controllerRouter )
+
 controllerRouter()
 
 
-
-$.getJSON("https://api.github.com/users/t3patterson?")
+// if(typeof myApiSecret === 'undefined'){
+//    var myApiSecret = ''
+// }
+//
+// $.getJSON("https://api.github.com/users/t3patterson?"+myApiSecret)
+// $.getJSON("https://api.github.com/users/t3patterson/repos?"+myApiSecret)

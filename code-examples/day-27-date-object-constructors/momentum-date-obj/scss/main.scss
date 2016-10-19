@@ -1,0 +1,52 @@
+@import "./imports/_normalize.scss";
+
+*{ box-sizing: border-box }
+img {
+   width: 100%;
+   display: block;
+}
+body{
+   margin: 0;
+   font-family: "Helvetica";
+   color: #fff;
+   text-shadow: 1px 1px 1px #333;
+}
+
+#app-container{
+   position: fixed;
+   top: 0; right: 0;
+   width: 100%;
+   height: 100vh;
+   background: #232526; /* fallback for old browsers */
+   background: -webkit-linear-gradient(to bottom, #232526 , #414345); /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to bottom, #232526 , #414345); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+   .centered-content{
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 100%;
+   }
+
+   .time{
+      font-size: 120px;
+      font-weight: 400;
+   }
+
+   h2{
+      font-size: 48px;
+   }
+
+   h3{
+      text-align: right;
+      padding-right: 15px;
+      font-size: 28px;
+      font-weight: 200;
+       span{
+         text-align: right;
+         background: #019875;
+         padding: 6px;
+      }
+   }
+}
