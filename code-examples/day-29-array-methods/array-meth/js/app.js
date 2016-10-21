@@ -32,7 +32,7 @@ $.getJSON("https://congress.api.sunlightfoundation.com/legislators?apikey=7ba96d
       console.log(serverResponse.results)
       var arrayOfCongressPeople = serverResponse.results
 
-
+      //Array.prototype.map
       var transformedArrayCopy = arrayOfCongressPeople.map(function(congoPerson){
          var fullNameAndTutle = congoPerson.title + " " +  congoPerson.first_name + " " + congoPerson.last_name
 
@@ -45,7 +45,7 @@ $.getJSON("https://congress.api.sunlightfoundation.com/legislators?apikey=7ba96d
       console.log('transformedArrayCopy', transformedArrayCopy)
 
 
-      //
+      //Array.prototype.filter
       var filteredArray = arrayOfCongressPeople.filter(function(congoPerson){
          console.log(congoPerson.first_name)
          if(congoPerson.chamber === 'senate'){
