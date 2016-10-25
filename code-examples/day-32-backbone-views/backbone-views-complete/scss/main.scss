@@ -1,0 +1,42 @@
+@import "./imports/_normalize.scss";
+
+*{ box-sizing: border-box }
+img {
+   width: 100%;
+   display: block;
+}
+
+body{
+   font-family: 'Lato', Helvetica ,sans-serif;
+
+}
+
+li{
+   list-style-type: none;
+}
+
+h1{
+   font-size: 36px;
+}
+
+h4{
+   font-size: 21px;
+}
+
+p{
+   font-size: 18px;
+   margin-bottom: 20px;
+   padding-left: 20px;
+}
+
+ul {
+   padding-left: 20px;
+}
+
+img {
+   border: 2px solid #333;
+}
+
+.country-profile{
+
+}
