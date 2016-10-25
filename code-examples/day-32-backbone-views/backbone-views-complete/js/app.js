@@ -34,20 +34,19 @@ var CountriesCollection = Backbone.Collection.extend({
    showCountriesByRegion: function(regionName){
       var countriesCollInstance = new CountriesCollection(regionName)
       countriesCollInstance.fetch().then(function(){
-         console.log(countriesCollInstance)
-         countriesCollInstance.remove('cid3')
+
+         var viewInstance = new ViewTemplate(countriesTableViewFn)
+         viewInstance.render(countriesCollInstance)
       })
    },
 
    showCountry: function(countryName){
       var modlInstance = new CountryModel(countryName)
       modlInstance.fetch().then(function(){
-            var viewInstance = new ContentView(showSingleCountryTempl)
+            var viewInstance = new ViewTemplate(showSingleCountryTempl)
             viewInstance.render(modlInstance)
       })
    },
-
-
 
    showHomePage: function(){
       var homeView = new HomeView(homePageTemplateFn)
@@ -56,7 +55,8 @@ var CountriesCollection = Backbone.Collection.extend({
 
    initialize: function(){
       console.log('backbone ROUTING')
-      var navView = new NavView(navViewTemplateFn)
+      var navView = new ViewTemplate(navViewTemplateFn)
+      navView.setElement('nav')
       navView.render()
       Backbone.history.start()
    }

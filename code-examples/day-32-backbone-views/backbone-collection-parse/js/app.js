@@ -20,7 +20,7 @@ var MoviesView = Backbone.View.extend({
 })
 
 var MovieModel = Backbone.Model.extend({
-   //(2nd Parse)
+   //(3: 2nd Parse, to capture the relevant portion of the object for the model )
    parse: function(parsedRes){
       console.log(parsedRes)
       return parsedRes.volumeInfo
@@ -31,7 +31,7 @@ var MovieModel = Backbone.Model.extend({
 var MovieCollection = Backbone.Collection.extend({
    model: MovieModel,
 
-   //(1st Parse)
+   //(2: 1st Parse, to drill down to array of similar json objects )
    parse: function(rawJSONRes){
       console.log('parsing original response response', rawJSONRes)
       return rawJSONRes.items
@@ -47,7 +47,8 @@ var AppRouter = Backbone.Router.extend({
    },
 
    showMovie: function(){
-      //(1) creating a new instance of a view
+      //(1) creating a new instance of a collection that points to
+      //     https://www.googleapis.com/books/v1/volumes?q=subject:fiction
       var movieColl = new MovieCollection()
       movieColl.fetch().then(function(){
          console.log('PARSED Collection:', movieColl)

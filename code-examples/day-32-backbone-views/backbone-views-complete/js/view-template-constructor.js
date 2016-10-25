@@ -1,5 +1,5 @@
 
-var ContentView = Backbone.View.extend({
+var ViewTemplate = Backbone.View.extend({
    el: '.content-area',
 
    _buildHTMLTemplate : function(){
@@ -18,59 +18,26 @@ var ContentView = Backbone.View.extend({
 
 })
 
-var HomeView = Backbone.View.extend({
-   el: '.content-area',
-   events: {
-      'click .get-info': 'putInputValInHash'
+var HomeView = ViewTemplate.extend({
+   events : {
+       // «event» + «classname» :  «event-handler-method»
+      'click .get-country-btn' : 'putInputValInHash'
    },
 
-   putInputValInHash: function(){
-      console.log('heyyyy')
+   putInputValInHash: function(evt){
+      console.log(evt, evt.target)
       var inputEl = document.querySelector('#country-name-input')
       window.location.hash = 'show-country/' + inputEl.value
       inputEl.value = ''
    },
-
-   _buildHTMLTemplate : function(){
-      return ''
-   },
-
-   render : function(data){
-      console.log(this)
-      this.el.innerHTML = this._buildHTMLTemplate(data)
-      return this
-   },
-
-   initialize: function(templateFn){
-      this._buildHTMLTemplate = templateFn
-   }
-
 })
 
-
-var NavView = Backbone.View.extend({
-   el: 'nav',
-
-   _buildHTMLTemplate : function(){
-      return ''
-   },
-
-   render : function(data){
-      console.log(this)
-      this.el.innerHTML = this._buildHTMLTemplate(data)
-      return this
-   },
-
-   initialize: function(templateFn){
-      this._buildHTMLTemplate = templateFn
-   }
-})
 
 var homePageTemplateFn = function(){
 
    var bigStr = "<h1> Search for a country </h1>"
        bigStr += "<input type='text' class='form-control' id='country-name-input'>"
-       bigStr += "<button class='btn btn-primary get-info'>Get Country Info</button>"
+       bigStr += "<button class='btn btn-primary get-country-btn'>Get Country Info</button>"
 
    return bigStr
 }
@@ -80,7 +47,7 @@ var showSingleCountryTempl = function(countryModel){
    var bigStr = '<div class="row">'
    bigStr +=    '<div class="col-sm-offset-2 col-sm-4">'
    bigStr +=       '<h1>'+ countryModel.get('name')+ '</h1>'
-   bigStr +=       '<img alt="Flag of Canada" src="https://flags.fmcdn.net/data/flags/big/'+ countryShortName +'.png">'
+   bigStr +=       '<img class="main-flag" alt="Flag of Canada" src="https://flags.fmcdn.net/data/flags/big/'+ countryShortName +'.png">'
    bigStr +=       '<h5>Native name: <em>'+countryModel.get('nativeName')+'</em></h5>'
    bigStr +=    '</div>'
    bigStr +=    '<div class="col-sm-4 country-profile">'
@@ -115,7 +82,7 @@ var navViewTemplateFn = function(){
    return htmlStr
 }
 
-var showCountriesTable = function(countryColl){
+var countriesTableViewFn = function(countryColl){
    var bigHTMLStr = ''
    bigHTMLStr += '<div class="container">'
 
@@ -124,26 +91,25 @@ var showCountriesTable = function(countryColl){
    bigHTMLStr +=       '<tr>'
    bigHTMLStr +=          '<th>&nbps;</th>'
    bigHTMLStr +=          '<th>Country</th>'
-   bigHTMLStr +=          '<th>Regton</th>'
+   bigHTMLStr +=          '<th>Region</th>'
    bigHTMLStr +=          '<th>Subregion</th>'
    bigHTMLStr +=       '</tr>'
    bigHTMLStr +=    '</thead>'
    bigHTMLStr +=    '<tbody>'
 
-   counryColl.models.map(function(ctryModel){
+   countryColl.models.forEach(function(ctryModel){
       bigHTMLStr += '<tr>'
-      bigHTMLStr +=    '<td>'+'<img alt="Flag of Canada" src="https://flags.fmcdn.net/data/flags/big/'+countryModel.get('altSpellings')[0]+'.png" width="80" height="60"/></td>'
+      bigHTMLStr +=    '<td>'+'<img alt="Flag of Canada" src="https://flags.fmcdn.net/data/flags/big/'+ctryModel.get('altSpellings')[0].toLowerCase()+'.png" width="80" height="60"/></td>'
       bigHTMLStr +=    '<td>'+ctryModel.get('name')+'</td>'
       bigHTMLStr +=    '<td>'+ctryModel.get('region')+'</td>'
       bigHTMLStr +=    '<td>'+ctryModel.get('subregion')+'</td>'
       bigHTMLStr += '</tr>'
-   }).join('')
+   })
 
    bigHTMLStr +=    '</tbody>'
 
    bigHTMLStr +=     '</table>'
 
    bigHTMLStr += '</div>'
-
-   document.querySelector('#app-container').innerHTML = bigHTMLStr
+   return bigHTMLStr
 }

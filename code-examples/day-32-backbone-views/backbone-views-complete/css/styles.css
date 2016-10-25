@@ -367,7 +367,7 @@ textarea {
 * {
   box-sizing: border-box; }
 
-img {
+img.main-flag {
   width: 100%;
   display: block; }
 
