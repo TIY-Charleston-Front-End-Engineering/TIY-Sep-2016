@@ -20,7 +20,7 @@ var MoviesView = Backbone.View.extend({
 })
 
 var MovieModel = Backbone.Model.extend({
-   //(3: 2nd Parse, to capture the relevant portion of the object for the model )
+   //(3: 2nd Parse, to capture the relevant portion of the object for the model   )
    parse: function(parsedRes){
       console.log(parsedRes)
       return parsedRes.volumeInfo
